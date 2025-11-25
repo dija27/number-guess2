@@ -1,10 +1,23 @@
 import random
-print("welcome to guess the number")
-print ("try to guess the number (1 - 100)")
-print("can you guess what it is ")
-number_to_guess = random.randint(1, 200)
-input(number_to_guess)
-if number_to_guess > 100:
-    print("too low !")
-if number_to_guess < 100:
-    print("too high!")
+correctAnswer = random.randint(1,100)
+gameOver = False
+
+while gameOver == False:
+
+    playerGuess= int(input("guess a number between 1 and 100:"))
+
+
+    if playerGuess == correctAnswer: 
+        compareAnswer = "right"
+        gameOver = True
+    elif playerGuess > correctAnswer:
+        compareAnswer = "high"
+    elif playerGuess < correctAnswer:
+        compareAnswer = "low"
+    
+    if compareAnswer == "right":
+        print("correct1 you win!!")
+    elif compareAnswer == "high":
+        print("too hight! gess again!")
+    elif compareAnswer == "low":
+        print("too low! guess again!")
